@@ -1,6 +1,6 @@
 <?php
 session_start();
-//require "../utils/config.php";
+require "../utils/config.php";
 //error_reporting(E_ALL);
 $login = $_REQUEST['cek'];
 switch($login){
