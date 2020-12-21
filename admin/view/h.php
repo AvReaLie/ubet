@@ -50,17 +50,5 @@
 			color: #dc3545;
 			font-weight: 600;
 		}
-		.success-msg{
-			color: green;
-			font-weight: 600;
-		}
-		.field-icon {
-          float: right;
-          margin-left: -30px;
-          margin-top: -26px;
-          margin-right: 10px;
-          position: relative;
-          z-index: 2;
-        }
 	</style>
 </head>
