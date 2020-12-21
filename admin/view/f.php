@@ -5,5 +5,7 @@
 </div>
 <script type="text/javascript" src="assets/js/vendor.js"></script>
 <script type="text/javascript" src="assets/js/bundle.js"></script>
+<script type="text/javascript" src="assets/sweetalert2/sweetalert2.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 </body>
 </html>
