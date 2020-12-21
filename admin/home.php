@@ -22,11 +22,43 @@ case 'logout':
         break;
 
   case 'dashboard':
-  $judul = "Ubet | Dashboard";  
-  require 'view/h.php';
-  require 'view/nav.php';
-  require 'view/body.php';
-  require 'view/f.php';
+    $judul = "Ubet | Dashboard";  
+    require 'view/h.php';
+    require 'view/nav.php';
+    require 'view/body.php';
+    require 'view/f.php';
+  break;
+
+  case 'penyalur':
+    $judul = "Ubet | Penyalur";  
+    require 'view/h.php';
+    require 'view/nav.php';
+    require 'model/penyalur/index.php';
+    require 'view/f.php';
+  break;
+
+  case 'provinsi':
+    $judul = "Ubet | Daerah | Provinsi";  
+    require 'view/h.php';
+    require 'view/nav.php';
+    require 'model/daerah/provinsi/index.php';
+    require 'view/f.php';
+  break;
+
+  case 'kabupaten':
+    $judul = "Ubet | Daerah | Kabupaten";  
+    require 'view/h.php';
+    require 'view/nav.php';
+    require 'model/daerah/kabupaten/index.php';
+    require 'view/f.php';
+  break;
+
+  case 'kecamatan':
+    $judul = "Ubet | Daerah | Kecamatan";  
+    require 'view/h.php';
+    require 'view/nav.php';
+    require 'model/daerah/kecamatan/index.php';
+    require 'view/f.php';
   break;
 
 break;  
