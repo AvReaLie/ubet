@@ -25,7 +25,6 @@
 <?php
 $counter = 1;
 include_once '../../../../utils/config.php';
-$admin_fun = new Adminfunction();
 $select = $admin_fun->select("kecamatan");
 if($select){ foreach($select as $se_data){
 	$condition0['id_kab'] = $se_data['id_kab'];
