@@ -11,6 +11,11 @@ switch($login){
 
   break;
 
+  case 'daftar':
+    $judul = "Ubet | Daftar";  
+    require 'view/signup.php';
+  break;
+
   case ''.md5('ceklogin').'':
         require 'controller/cek_control.php';
     break;
