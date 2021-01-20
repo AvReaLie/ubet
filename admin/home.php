@@ -2,7 +2,7 @@
 session_start(); 
 require '../utils/config.php';
 if(!isset($_SESSION['log_adm'])){
-echo "<script>alert('Login terlebih dahulu');document.location='../'</script>";
+echo "<script>alert('Login terlebih dahulu');document.location='$admin_url'</script>";
   exit();
   }
 
@@ -34,6 +34,14 @@ case 'logout':
     require 'view/h.php';
     require 'view/nav.php';
     require 'model/penyalur/index.php';
+    require 'view/f.php';
+  break;
+
+  case 'keahlian':
+    $judul = "Ubet | Keahlian";  
+    require 'view/h.php';
+    require 'view/nav.php';
+    require 'model/keahlian/index.php';
     require 'view/f.php';
   break;
 
