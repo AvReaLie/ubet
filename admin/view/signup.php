@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-	<title>Sign Up</title>
+	<title><?=$judul?></title>
 	<style>
 		#loader{
 			transition:all .3s ease-in-out;
@@ -63,30 +63,73 @@
     	</div>
     	<div class="col-12 col-md-4 peer pX-40 pY-80 h-100 bgc-white scrollable pos-r" style="min-width:320px">
     		<h4 class="fw-300 c-grey-900 mB-40">Register</h4>
-    		<form>
+    		<form id="ins_rec" method="post" data-toggle="validator">
     			<div class="form-group">
     				<label class="text-normal text-dark">Username</label> 
-    				<input type="text" class="form-control" placeholder="John Doe">
+    				<input type="text" class="form-control" name="userName" placeholder="Username">
     			</div>
     			<div class="form-group">
     				<label class="text-normal text-dark">Email Address</label> 
-    				<input type="email" class="form-control" placeholder="name@email.com">
+    				<input type="email" class="form-control" name="emailAddr" placeholder="name@email.com">
 			</div>
 				<div class="form-group">
 					<label class="text-normal text-dark">Password</label> 
-					<input type="password" class="form-control" placeholder="Password">
+					<input type="password" class="form-control" name="passWord" placeholder="Password" data-minlength="6" id="passWord">
+					<span class="help-block">Minimum of 6 characters</span>
 				</div>
 				<div class="form-group">
 					<label class="text-normal text-dark">Confirm Password</label> 
-					<input type="password" class="form-control" placeholder="Password">
+					<input type="password" class="form-control" name="cpassWord" placeholder="Confirm Password" data-match="#passWord" data-match-error="Passwords don&#39;t match" id="cpassWord">
+					<div class="help-block with-errors"></div>
 				</div>
 				<div class="form-group">
-					<button class="btn btn-primary">Register</button>
+					<button type="submit" class="btn btn-primary">Register</button>
 				</div>
 			</form>
 		</div>
 	</div>
 	<script type="text/javascript" src="assets/js/vendor.js"></script>
 	<script type="text/javascript" src="assets/js/bundle.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<!-- Validate -->
+	<script src="<?php echo $admin_url ?>assets/js/bootstrap-validator/dist/validator.min.js"></script>
+    <script src="<?php echo $admin_url ?>assets/js/jquery.validate.min.js"></script>
+    <script src="<?php echo $admin_url ?>assets/js/additional-methods.min.js"></script>
 </body>
 </html>
+
+<script type="text/javascript">
+  
+$(document).ready(function (){
+
+    $('#ins_rec').on("submit", function(e){
+      e.preventDefault();
+      $.ajax({
+
+        type:'POST',
+        url:'<?php echo $admin_url ?>controller/daftar_control.php',
+        data:$(this).serialize(),
+        success:function(vardata){
+
+          var json = JSON.parse(vardata);
+
+          if(json.status == 101){
+            console.log(json.msg);
+            alert('Daftar berhasil');document.location='<?=$admin_url?>'
+          }
+          else if(json.status == 102){
+            console.log(json.msg);
+          }
+          else{
+            console.log(json.msg);
+          }
+
+        }
+
+      });
+
+    });
+
+});
+
+</script>
