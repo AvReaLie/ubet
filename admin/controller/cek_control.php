@@ -1,5 +1,4 @@
 <?php
-$admin_fun = new Adminfunction();
 
 if ($_POST) {
     if(isset($_POST['email']) && $_POST['password']){
